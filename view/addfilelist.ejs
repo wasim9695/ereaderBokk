@@ -1,0 +1,92 @@
+<%- include ('header')%>
+<%- include ('sidebar')%>
+<%- include ('navbread')%>
+   
+    <section>
+        <div class="container py-4 ">
+          <div class="row">
+            <div class="col-lg-12 mx-auto d-flex justify-content-center flex-column shadow-lg">
+              <h3 class="text-center">File List</h3>
+              <div class="card">
+                <div class="table-responsive">
+                  <table class="table align-items-center mb-4">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">S.No</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Artwork</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">File</th>
+                        <th class="ttext-uppercase text-secondary  text-secondary text-xxs font-weight-bolder opacity-7">Books</th>
+                        <th class="text-secondary opacity-7">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%data.forEach((files, index)=>{%>
+                      <tr>
+                        <td>
+                          <%- index+1%>
+                        </td>
+                        <td>
+                          <%- files.unicodes%>
+                        </td>
+                        <td>
+                          <%- files.tags%>
+                        </td>
+                        <td>
+                          <a href="/viewfilesall/<%- files._id%>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          View Books
+                          </a>
+                        </td>
+                        <td>
+                          <a href="/deleteDatasFile/<%- files._id%>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                         Delete
+                          </a>
+                        </td>
+                      </tr>
+              <%})%>
+                      
+                    </tbody>
+                  </table>
+
+
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination" style="float: right;">
+                      <li class="page-item">
+                        <a class="page-link" href="/viewfilesall?page=<%- page - 1 %>" aria-label="Previous">
+                          <i class="fa fa-angle-left"></i>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="/viewfilesall?page=1">1</a></li>
+                      <li class="page-item"><a class="page-link" href="/viewfilesall?page=2">2</a></li>
+                      <li class="page-item"><a class="page-link" href="/viewfilesall?page=3">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="/viewfilesall?page=<%- page + 1 %>" aria-label="Next">
+                          <i class="fa fa-angle-right"></i>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <!-- <a href="/items?page={{ page - 1 }}">Previous</a>
+
+
+<ul>
+  <% for (var i in 1..totalPages){ %>
+    <li>
+      <a href="/viewfilesall?page=<%- i %>" <% if (i == page){ %>class="active"<% } %>><%- i %></a>
+    </li>
+  <% } %>
+</ul>
+
+
+<a href="/viewfilesall?page=<%- page + 1 %>">Next</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <%- include ('footer')%>

@@ -1,0 +1,37 @@
+{
+  "name": "eread",
+  "version": "1.0.0",
+  "description": "version 1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "eread"
+  },
+  "keywords": [
+    "wasim",
+    "akream"
+  ],
+  "author": "wasim akram",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-device": "^0.4.2",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.8.0",
+    "quilljs": "^0.18.1",
+    "soft-ui-design-system": "^1.0.3"
+  }
+}
