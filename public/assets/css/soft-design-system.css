@@ -26609,5 +26609,8 @@ pre[class*="language-"] {
     overflow: auto !important;
   }
 }
+.dashboars .card{
+  border:1px solid #dddddd;
+}
 
 /*# sourceMappingURL=kit-free.css.map */

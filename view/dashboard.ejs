@@ -1,0 +1,63 @@
+<%- include ('header')%>
+<%- include ('sidebar')%>
+<%- include ('navbread')%>
+<section class="dashboars">
+    <div class="container py-4 ">
+      <div class="row">
+            <div className="col-md-12">
+                <div class="row">
+                    <div class="col-md-4 cd1">
+                        <div class="card">
+                            <div class="card-body text-center">
+
+                                <h6 class="start mb-0 font-weight-bolder">Total Books</h6>
+                                <p class="start opacity-8 mb-0 text-sm">43</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 cd1">
+                        <div class="card">
+                            <div class="card-body text-center">
+
+                                <h6 class="start mb-0 font-weight-bolder">Total Users</h6>
+                                <p class="start opacity-8 mb-0 text-sm">34</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 cd1">
+                        <div class="card">
+                            <div class="card-body text-center">
+
+                                <h6 class="start mb-0 font-weight-bolder">Total File</h6>
+                                <p class="start opacity-8 mb-0 text-sm">22</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            <div className='row'><div className='col-12'></div></div>
+            
+
+        
+        </div>
+    </div>
+  </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        async function uploadFile() {
+          let formData = new FormData(); 
+          formData.append("fileupload", fileupload.files[0]);
+          const response = await fetch('http://localhost:7000/fileUpload', {
+            method: "POST", 
+            body: formData
+          }); 
+          const data = await response.json();
+          // console.log(data.data);
+          document.querySelector("#files").value=data.data;
+          
+        }
+        </script>
+        <%- include ('footer')%>

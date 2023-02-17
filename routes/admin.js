@@ -9,7 +9,10 @@ module.exports = (router, app) => {
     //    return false;
     return res.render('../view/index');
     });
-
+    router.get('/dashboard', (req, res, next) => {
+      //  console.log("hrello");
+    //    return false;
+    return res.render('../view/dashboard'); });
 
          
     router.post('/login', (req, res, next) => {
